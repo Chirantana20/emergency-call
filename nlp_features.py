@@ -69,7 +69,6 @@ def extract_features(transcript: str) -> dict:
         "avg_sentence_length":  round(avg_sentence_length, 1),
         "verb_ratio":           round(verb_ratio, 2),
         "negated_words":        negations,
-        # Quick pre-classification hint for Claude
         "keyword_severity_hint": (
             "critical" if critical_hits else
             "high"     if high_hits     else
