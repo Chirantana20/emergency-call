@@ -3,6 +3,8 @@ import tempfile
 import os
 from faster_whisper import WhisperModel
 
+
+WHISPER_MODEL_SIZE = os.environ.get("WHISPER_MODEL_SIZE", "tiny")
 # Load once at startup — "tiny" is fastest, swap for "base" if accuracy is poor
 _model = None
 

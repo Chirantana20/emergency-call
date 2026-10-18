@@ -1,0 +1,17 @@
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-ra --strict-markers"
+
+[tool.coverage.run]
+source = ["app", "analyze", "nlp_features", "transcribe", "model"]
+omit = ["tests/*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+extend-exclude = ["venv", ".venv"]
+
+[tool.ruff.lint]
+# E/F: pycodestyle + pyflakes, I: import sorting, B: bugbear (likely bugs)
+select = ["E", "F", "I", "B"]

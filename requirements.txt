@@ -5,3 +5,6 @@ faster-whisper
 transformers
 torch
 spacy
+pytest
+pytest-cov
+ruff
