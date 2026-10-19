@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Local config and secrets
+.env
+.env.*
+
+# Model caches (downloaded at build/run time, never committed)
+.cache/
+huggingface/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store

@@ -1,6 +1,6 @@
 # model/predict.py
 import torch
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
+from transformers import AutoModelForSequenceClassification, AutoTokenizer
 
 LABELS    = ["critical", "high", "medium", "low", "non_emergency"]
 SAVE_PATH = "chirantana20/emergency-severity-distilbert"  # HF Hub repo ID

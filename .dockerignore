@@ -1,0 +1,26 @@
+.git
+.github
+.gitignore
+.gitattributes
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Not needed at runtime
+tests/
+scripts/*.sh
+requirements-dev.txt
+*.md
+Dockerfile
+.dockerignore
+
+# Secrets
+.env
+.env.*

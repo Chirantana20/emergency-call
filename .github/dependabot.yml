@@ -1,0 +1,10 @@
+# Keeps SHA-pinned GitHub Actions versions current. Without this, the pins
+# in ci.yml would silently fall behind and never receive security fixes.
+# Dependabot opens a PR for each update; CI (ci.yml) validates it like any
+# other change before merge.
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
