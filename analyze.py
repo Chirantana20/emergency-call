@@ -2,6 +2,7 @@
 from model.predict import predict
 from nlp_features import extract_features
 
+
 def analyze_severity(transcript: str) -> dict:
     features = extract_features(transcript)
     result   = predict(transcript)

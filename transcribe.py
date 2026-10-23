@@ -1,11 +1,14 @@
 # transcribe.py — uses faster-whisper, no numba, no DLL issues
-import tempfile
 import os
+import tempfile
+
 from faster_whisper import WhisperModel
 
-
+# "tiny" is fastest; set WHISPER_MODEL_SIZE=base (or larger) if accuracy is poor.
+# Also read by scripts/download_models.py so the Docker build caches the same model.
 WHISPER_MODEL_SIZE = os.environ.get("WHISPER_MODEL_SIZE", "tiny")
-# Load once at startup — "tiny" is fastest, swap for "base" if accuracy is poor
+
+# Loaded lazily on first request, then reused
 _model = None
 
 def get_model():
@@ -13,7 +16,7 @@ def get_model():
     if _model is None:
         print("Loading Whisper model...")
         # cpu + int8 = fastest on machines without GPU
-        _model = WhisperModel("tiny", device="cpu", compute_type="int8")
+        _model = WhisperModel(WHISPER_MODEL_SIZE, device="cpu", compute_type="int8")
         print("Whisper ready.")
     return _model
 
