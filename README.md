@@ -19,7 +19,8 @@ A REST API that transcribes recorded emergency calls and classifies their severi
 - [Technology Stack](#technology-stack)
 - [Configuration](#configuration)
 - [Limitations](#limitations)
-- [Roadmap](#roadmap)
+- [Product Roadmap](#product-roadmap)
+- [Infrastructure Roadmap](#infrastructure-roadmap)
 - [Author](#author)
 - [License](#license)
 
@@ -325,7 +326,7 @@ A few choices worth knowing about if you extend this workflow:
 
 ---
 
-## Roadmap
+## Product Roadmap
 
 - Multilingual support
 - Real-time and streaming audio analysis
@@ -335,12 +336,10 @@ A few choices worth knowing about if you extend this workflow:
 
 ---
 
-## Author
+## Infrastructure Roadmap
 
-**Chirantana** ([@Chirantana20](https://github.com/Chirantana20))
+This project also doubles as a hands-on vehicle for production engineering practice. Each stage below builds on the last and is verified before moving to the next:
 
----
-
-## License
-
-No license has been specified. Add a `LICENSE` file (for example, MIT) to define the terms under which this project may be used.
+- [x] **Foundation** — automated tests (pytest), a production-style multi-stage Dockerfile, and developer scripts (`scripts/setup.sh`, `scripts/smoke_test.sh`, `scripts/docker_smoke.sh`)
+- [x] **CI/CD** — a GitHub Actions pipeline (lint → test → Docker build and smoke test → publish to GHCR), with pull requests gated on all checks passing
+- [ ] **Cloud deployment** — deploy the published GHCR image to a managed platform (e.g. Google Cloud Run)
