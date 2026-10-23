@@ -24,4 +24,4 @@ cleanup() {
 trap cleanup EXIT
 
 # Generous wait: the first request may still be loading models into memory
-WAIT_SECONDS=120 scripts/smoke_test.sh "http://localhost:${HOST_PORT}" "${1:-}"
+WAIT_SECONDS=120 bash scripts/smoke_test.sh "http://localhost:${HOST_PORT}" "${1:-}"
