@@ -21,8 +21,6 @@ A REST API that transcribes recorded emergency calls and classifies their severi
 - [Limitations](#limitations)
 - [Product Roadmap](#product-roadmap)
 - [Infrastructure Roadmap](#infrastructure-roadmap)
-- [Author](#author)
-- [License](#license)
 
 ---
 
